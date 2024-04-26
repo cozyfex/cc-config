@@ -1,0 +1,14 @@
+{
+  "name": "@cozyfex/prettier-config",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".prettierrc.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "CozyFex <cozyfex@gmail.com>",
+  "license": "ISC",
+  "peerDependencies": {
+    "prettier": ">= 3"
+  }
+}

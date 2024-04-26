@@ -1,0 +1,11 @@
+{
+  "name": "@cozyfex/cc-config",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Coding conventions config",
+  "author": "CozyFex <cozyfex@gmail.com>",
+  "license": "ISC",
+  "scripts": {
+    "example": "pnpm --filter example"
+  }
+}
