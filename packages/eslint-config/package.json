@@ -1,6 +1,6 @@
 {
   "name": "@cozyfex/eslint-config",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "type": "module",
   "description": "",
   "main": ".eslintrc.json",
@@ -18,7 +18,7 @@
     "eslint-plugin-promise": "^6.1.1"
   },
   "peerDependencies": {
-    "eslint": ">= 9",
+    "eslint": ">= 8",
     "typescript": ">= 5"
   }
 }
