@@ -6,25 +6,20 @@ on:
       - main
     paths:
       - 'packages/eslint-config/**'
-      - 'packages/prettier-config/**'
 
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        package: [ 'eslint-config', 'prettier-config' ]
+        package: [ 'eslint-config' ]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          registry-url: 'https://registry.npmjs.org'
-
-      - name: Install dependencies
-        run: npm install
+          node-version: 20
 
       - name: Publish package
         run: |
