@@ -1,29 +1,38 @@
-name: Publish NPM package
+name: Publish Multiple Packages with pnpm
 
 on:
   push:
     branches:
       - main
+    paths:
+      - 'packages/eslint-config/**'
+      - 'packages/prettier-config/**'
 
 jobs:
-  build:
+  build-and-publish:
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        package: [ 'eslint-config', 'prettier-config' ]
     steps:
       - uses: actions/checkout@v2
+
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
           node-version: '14'
           registry-url: 'https://registry.npmjs.org'
 
+      - name: Install pnpm
+        run: npm install -g pnpm
+
       - name: Install dependencies
-        run: npm install
+        run: pnpm install
 
-      - name: Build package
-        run: npm run build  # 필요한 빌드 스크립트 실행
-
-      - name: Publish to NPM
-        run: npm publish
+      - name: Build and publish package
+        run: |
+          cd packages/${{ matrix.package }}
+          pnpm run build
+          pnpm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
