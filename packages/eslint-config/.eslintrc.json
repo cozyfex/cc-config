@@ -51,17 +51,12 @@
           {
             "pattern": "{react*,react*/**}",
             "group": "external",
-            "position": "after"
+            "position": "before"
           },
           {
             "pattern": "{next*,next*/**}",
             "group": "external",
-            "position": "after"
-          },
-          {
-            "pattern": "{*react-query*}",
-            "group": "external",
-            "position": "after"
+            "position": "before"
           },
           {
             "pattern": "{@constants,@constants/**}",
