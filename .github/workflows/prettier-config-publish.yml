@@ -1,4 +1,4 @@
-name: Publish Multiple Packages
+name: Prettier Config NPM Publish
 
 on:
   push:

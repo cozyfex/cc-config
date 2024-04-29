@@ -1,4 +1,4 @@
-name: Publish Multiple Packages
+name: ESLint Config NPM Publish
 
 on:
   push:
@@ -14,7 +14,7 @@ jobs:
       matrix:
         package: [ 'eslint-config' ]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
