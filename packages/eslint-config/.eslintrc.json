@@ -59,6 +59,11 @@
             "position": "after"
           },
           {
+            "pattern": "{*react-query*}",
+            "group": "external",
+            "position": "after"
+          },
+          {
             "pattern": "{@constants,@constants/**}",
             "group": "internal",
             "position": "before"
