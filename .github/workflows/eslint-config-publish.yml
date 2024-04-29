@@ -1,4 +1,4 @@
-name: ESLint Config NPM Publish
+name: Publish Multiple Packages
 
 on:
   push:
@@ -6,15 +6,16 @@ on:
       - main
     paths:
       - 'packages/eslint-config/**'
+      - 'packages/prettier-config/**'
 
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        package: [ 'eslint-config' ]
+        package: [ 'eslint-config', 'prettier-config' ]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
