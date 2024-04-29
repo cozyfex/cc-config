@@ -1,4 +1,4 @@
-name: Publish Multiple Packages with pnpm
+name: Publish Multiple Packages
 
 on:
   push:
