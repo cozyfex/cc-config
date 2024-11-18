@@ -2,7 +2,6 @@ import eslint from '@eslint/js';
 import importPlugin from 'eslint-plugin-import';
 import prettier from 'eslint-plugin-prettier';
 import promise from 'eslint-plugin-promise';
-// eslint-disable-next-line import/no-unresolved
 import tseslint from 'typescript-eslint';
 
 /** @type {import('eslint').Linter.Config[]} */
@@ -16,6 +15,13 @@ const ESLintConfig = [
     plugins: {
       prettier,
       promise,
+    },
+
+    settings: {
+      "import/resolver": {
+        typescript: true,
+        node: true,
+      },
     },
 
     rules: {
