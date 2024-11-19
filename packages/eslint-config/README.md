@@ -18,53 +18,31 @@ pnpm add eslint @cozyfex/eslint-config
 
 #### Add below text to your eslint config file.
 
-```json lines
-{
-  // ...
-  "extends": [
-    // ...
-    // Here!!
-    "@cozyfex/eslint-config",
-    // This is option
-    "@cozyfex/eslint-config/mixins/naming"
-  ],
-  // ...
-}
+```js
+import ESLintConfigs from '@cozyfex/eslint-config/eslint-configs.mjs';
+import NamingESLint from '@cozyfex/eslint-config/mixins/naming-eslint.mjs';
+import ReactESLint from '@cozyfex/eslint-config/mixins/react-eslint.mjs';
+import tseslint from 'typescript-eslint';
+
+export default tseslint.config(
+    ...ESLintConfigs,
+    ...ReactESLint,
+    ...NamingESLint,
+);
+
 ```
 
-#### Example(`.eslintrc.json`)
+#### Example(`eslint.config.mjs`)
 
-```json lines
-{
-  "root": true,
-  "env": {
-    "browser": true,
-    "es2020": true
-  },
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react-hooks/recommended",
-    // Here!!
-    "@cozyfex/eslint-config",
-    // This is option
-    "@cozyfex/eslint-config/mixins/naming"
-  ],
-  "ignorePatterns": [
-    "dist",
-    ".eslintrc.cjs"
-  ],
-  "parser": "@typescript-eslint/parser",
-  "plugins": [
-    "react-refresh"
-  ],
-  "rules": {
-    "react-refresh/only-export-components": [
-      "warn",
-      {
-        "allowConstantExport": true
-      }
-    ]
-  }
-}
+```js
+import ESLintConfigs from '@cozyfex/eslint-config/eslint-configs.mjs';
+import NamingESLint from '@cozyfex/eslint-config/mixins/naming-eslint.mjs';
+import ReactESLint from '@cozyfex/eslint-config/mixins/react-eslint.mjs';
+import tseslint from 'typescript-eslint';
+
+export default tseslint.config(
+    ...ESLintConfigs,
+    ...ReactESLint,
+    ...NamingESLint,
+);
 ```
