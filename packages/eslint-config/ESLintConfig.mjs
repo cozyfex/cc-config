@@ -1,16 +1,23 @@
-import eslint from '@eslint/js';
-import importPlugin from 'eslint-plugin-import';
-import prettier from 'eslint-plugin-prettier';
-import promise from 'eslint-plugin-promise';
-import tseslint from 'typescript-eslint';
+import eslint from "@eslint/js";
+import importPlugin from "eslint-plugin-import";
+import prettier from "eslint-plugin-prettier";
+import promise from "eslint-plugin-promise";
+import tseslint from "typescript-eslint";
+import globals from "globals";
 
-/** @type {import('eslint').Linter.Config[]} */
 const ESLintConfig = [
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
   importPlugin.flatConfigs.recommended,
   {
-    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    name: "cozyfex-default-eslint",
+
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
+    },
 
     ignores: [
       "**/dist/",
@@ -19,7 +26,7 @@ const ESLintConfig = [
       "**/node_modules/",
       "**/.idea/",
       "**/.vscode/",
-      "**/postcss.config.js",
+      "**/*.config.js",
     ],
 
     plugins: {
