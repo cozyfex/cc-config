@@ -12,6 +12,15 @@ const ESLintConfig = [
   {
     files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
 
+    ignores: [
+      "dist/",
+      "build/",
+      ".next/",
+      "**/node_modules/",
+      "**/.idea/",
+      "**/.vscode/",
+    ],
+
     plugins: {
       prettier,
       promise,
@@ -25,8 +34,6 @@ const ESLintConfig = [
     },
 
     rules: {
-      "@typescript-eslint/no-unused-expressions": "off",
-
       "@typescript-eslint/no-unused-vars": [
         "error",
         {
