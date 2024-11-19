@@ -153,9 +153,11 @@ const BaseESLint = [
   },
   {
     ignores: [
+      "**/out/",
       "**/dist/",
       "**/build/",
-      ".next/",
+      "**/.next/",
+      "**/_next/",
       "**/node_modules/",
       "**/.idea/",
       "**/.vscode/",
