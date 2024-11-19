@@ -1,14 +1,8 @@
-import eslint from "@eslint/js";
-import importPlugin from "eslint-plugin-import";
+import globals from "globals";
 import prettier from "eslint-plugin-prettier";
 import promise from "eslint-plugin-promise";
-import tseslint from "typescript-eslint";
-import globals from "globals";
 
-const ESLintConfig = [
-  eslint.configs.recommended,
-  ...tseslint.configs.recommended,
-  importPlugin.flatConfigs.recommended,
+const BaseESLint = [
   {
     name: "cozyfex-default-eslint",
 
@@ -18,16 +12,6 @@ const ESLintConfig = [
         ...globals.node,
       },
     },
-
-    ignores: [
-      "**/dist/",
-      "**/build/",
-      "**/.next/",
-      "**/node_modules/",
-      "**/.idea/",
-      "**/.vscode/",
-      "**/*.config.js",
-    ],
 
     plugins: {
       prettier,
@@ -167,6 +151,17 @@ const ESLintConfig = [
       ],
     },
   },
+  {
+    ignores: [
+      "**/dist/",
+      "**/build/",
+      ".next/",
+      "**/node_modules/",
+      "**/.idea/",
+      "**/.vscode/",
+      "**/*.config.js",
+    ],
+  },
 ];
 
-export default ESLintConfig;
+export default BaseESLint;

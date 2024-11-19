@@ -6,6 +6,6 @@
   "author": "CozyFex <cozyfex@gmail.com>",
   "license": "ISC",
   "scripts": {
-    "example": "pnpm --filter example"
+    "example": "pnpm --filter examples"
   }
 }
