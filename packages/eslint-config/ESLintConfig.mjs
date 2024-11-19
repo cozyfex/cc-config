@@ -13,12 +13,13 @@ const ESLintConfig = [
     files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
 
     ignores: [
-      "dist/",
-      "build/",
-      ".next/",
+      "**/dist/",
+      "**/build/",
+      "**/.next/",
       "**/node_modules/",
       "**/.idea/",
       "**/.vscode/",
+      "**/postcss.config.js",
     ],
 
     plugins: {
